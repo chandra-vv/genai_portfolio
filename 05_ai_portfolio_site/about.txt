@@ -1,0 +1,16 @@
+Name: John
+Profession: Data Engineer
+Cloud Platforms: AWS, Azure
+Languages: Python, SQL, Java, Scala
+GenAI Projects:
+- AI Resume Assistant
+- PDF Search Bot
+- Portfolio Q&A using LangChain
+
+Experience:
+- 3 years at Amazon (Data Engineer)
+- 2 years at Google (Data Engineer)
+
+Education: Master of Science in Data Science
+GitHub: https://github.com
+LinkedIn: https://linkedin.com/in
