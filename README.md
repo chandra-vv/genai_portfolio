@@ -110,11 +110,13 @@ These projects reflect my deep dive into practical Generative AI development —
 ```
 01_llm_basics/
     first_openai_prompt.py
+    README.md
 
 02_pdf_qa_chatbot/
     app.py
     utils.py
     requirements.txt
+    README.md
 
 03_entity_memory_chatbot/
     app.py
