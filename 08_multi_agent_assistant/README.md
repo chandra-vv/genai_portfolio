@@ -1,15 +1,22 @@
 # 🧠 LangGraph Multi-Agent Assistant
 
-This project is a **Streamlit demo** that shows how to combine **LangChain** + **LangGraph** into a simple **multi-agent workflow**:
+This project demonstrates a Multi-Agent Assistant framework built using **LangGraph**, **LangChain**, **RAG**, **VectorDB**, **Embedding**, **Agents**, and **Streamlit**. The assistant can answer complex user questions by breaking them into sub-questions, retrieving context-aware answers, and maintaining session memory — all while optionally using uploaded documents.
 
-* **Controller Agent**
-  Navigate the user query to the Planner Agent or the Retriever Agent based on the complexity of the question.
+📌 **Key Features**
 
-* **Planner Agent**
-  Breaks down a complex user query into smaller, focused sub-questions.
+✅ **Multi-Agent Collaboration** using LangGraph
 
-* **Retriever Agent**
-  Answer each sub-question by searching an uploaded text file.
+✅ **Planner Agent** breaks down a complex user query into smaller, focused sub-questions.
+
+✅ **Retriever Agent** answer each sub-question by searching an uploaded text file.
+
+✅ **Memory Node** to retain and display full conversation context
+
+✅ **Interactive UI** built with Streamlit (supports tabbed views)
+
+✅ **Optional Document Upload** to query custom knowledge
+
+✅ Powered by **OpenAI GPT-3.5 Turbo** and **FAISS vector store**
 
 ---
 
@@ -23,9 +30,14 @@ multi_agent_assistant/
 │   └── retriever_agent.py        # Retriever: answers sub-questions using embeddings + FAISS
 │
 ├── graph/
-│   └── langgraph_multi_agent.py  # Graph wiring: planner → retriever (loop) → end
+│   └── langgraph_multi_agent.py  # Graph wiring: planner → retriever (loop) → end.
+|      # The controller node analyzes the query and determines whether to send it to the planner agent or the retrieve agent based on the complexity of the query. 
+|        For example:
+|        1. If the query is complex, the process follows this path: planner → retriever (loop) → end.
+|        2. If the query is not complex, it directly navigates to the retriever (with no sub-questions).
+|
 │
-├── about.txt                     # Knowledge base (This is the sample .txt file for testing. You can use your own .txt file.)
+├── about.txt                     # Knowledge base (This is the sample .txt file for testing. You can use your own .txt file and play with it.)
 ├── app.py                        # Streamlit UI
 ├── requirements.txt              # Python dependencies
 └── README.md                     # Project documentation
@@ -127,10 +139,28 @@ Core dependencies include:
 
 ---
 
-## ✨ Future Improvements
+📂 Optional Enhancements (Coming Soon)
 
-* Cache the FAISS index instead of rebuilding on every request.
-* Add source documents display in retriever answers.
-* Expand `about.txt` into a richer knowledge base.
+✅ Add summarizer node (e.g., to condense large answers)
+
+✅ Add scoring/ranking agent
+
+🔲 Support for PDF/CSV uploads
+
+🔲 Add multi-modal support (text + image)
+
+🔲 Deploy to Streamlit Cloud
+
+🤖 Future Work
+
+ Actively working on:
+
+🔲 Fixing LangGraph update state errors
+
+🔲 Improving summarizer logic
+
+🔲 Enhancing memory with embeddings
+
+🔲 Making response flow more robust (parallel planning + retrieval)
 
 ---
