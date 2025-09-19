@@ -137,7 +137,7 @@ Core dependencies include:
 * `faiss-cpu` – for vector search
 * `python-dotenv` – for environment variable management
 
----
+
 
 📂 Optional Enhancements (Coming Soon)
 
@@ -150,6 +150,8 @@ Core dependencies include:
 🔲 Add multi-modal support (text + image)
 
 🔲 Deploy to Streamlit Cloud
+
+---
 
 🤖 Future Work
 
