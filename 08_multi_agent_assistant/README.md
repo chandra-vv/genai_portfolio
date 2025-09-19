@@ -2,11 +2,14 @@
 
 This project is a **Streamlit demo** that shows how to combine **LangChain** + **LangGraph** into a simple **multi-agent workflow**:
 
+* **Controller Agent**
+  Navigate the user query to the Planner Agent or the Retriever Agent based on the complexity of the question.
+
 * **Planner Agent**
   Breaks down a complex user query into smaller, focused sub-questions.
 
 * **Retriever Agent**
-  Answers each sub-question by searching a local knowledge base (`about.txt`).
+  Answer each sub-question by searching an uploaded text file.
 
 ---
 
@@ -22,7 +25,7 @@ multi_agent_assistant/
 ├── graph/
 │   └── langgraph_multi_agent.py  # Graph wiring: planner → retriever (loop) → end
 │
-├── about.txt                     # Knowledge base (toy content)
+├── about.txt                     # Knowledge base (This is the sample .txt file for testing. You can use your own .txt file.)
 ├── app.py                        # Streamlit UI
 ├── requirements.txt              # Python dependencies
 └── README.md                     # Project documentation
@@ -53,7 +56,7 @@ source .venv/bin/activate      # macOS/Linux
 pip install -r requirements.txt
 ```
 
-### 4. Setup environment variables
+### 4. Set up environment variables
 
 Create a `.env` file in the project root:
 
@@ -126,7 +129,7 @@ Core dependencies include:
 
 ## ✨ Future Improvements
 
-* Cache FAISS index instead of rebuilding on every request.
+* Cache the FAISS index instead of rebuilding on every request.
 * Add source documents display in retriever answers.
 * Expand `about.txt` into a richer knowledge base.
 
