@@ -1,0 +1,13 @@
+Generative AI (GenAI) is a branch of artificial intelligence that focuses on creating new content, such as text, images, audio, and even code. Unlike traditional AI systems that only analyze or classify data, GenAI models generate novel outputs.
+
+Large Language Models (LLMs) such as GPT-3.5 and GPT-4 are key examples of GenAI. They are trained on massive amounts of text data and can perform tasks like question answering, summarization, and conversation.
+
+Embeddings are numerical representations of text or data. They allow us to measure similarity between pieces of information. For example, two sentences with similar meaning will have embeddings that are close in vector space.
+
+Retrieval-Augmented Generation (RAG) is a technique that combines information retrieval with generative AI. Instead of asking an LLM to generate answers from scratch, RAG first searches a knowledge base (using embeddings + vector search) and then passes the most relevant context to the LLM for a more accurate response.
+
+LangChain is a Python framework that helps developers build GenAI-powered applications. It provides tools for chaining prompts, managing memory, connecting to vector databases, and creating conversational AI systems.
+
+LangGraph is an advanced framework built on LangChain that makes it easier to design multi-agent workflows. For example, one agent can break down a question into sub-questions (planner agent), and another agent can search documents for answers (retriever agent). These agents work together as a graph to solve complex problems step by step.
+
+GenAI is being used in many real-time applications, such as chatbots, document assistants, educational tutors, and AI copilots. By combining embeddings, RAG pipelines, and agents, developers can create scalable and intelligent assistants that work across multiple domains.
