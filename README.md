@@ -1,58 +1,48 @@
-# ✅ Vinay Chandra – GenAI Projects Portfolio
 
-Welcome to my **hands-on GenAI project portfolio**, built as part of my learning journey from foundational LLM use to advanced LangChain and Streamlit-powered applications.
+# ✅ Vinay Chandra – Generative AI Projects Portfolio
 
-Each project below is practical, ethical, and showcases skills in LangChain, OpenAI, Streamlit, Retrieval-Augmented Generation (RAG), memory management, and more — combined with my background in **Data Engineering**.
+Welcome to my **Generative AI (GenAI) Projects Portfolio**, where I combine my **Data Engineering background** with **LLM-powered applications**.  
+This repository is a structured showcase of projects built during my **step-by-step GenAI learning journey**, progressing from basic LLM demos to advanced **multi-agent assistants**.
 
 ---
 
 ## 📁 Folder Structure
 
-| Folder                        | Description |
-|------------------------------|-------------|
-| `01_llm_basic/`              | Basic OpenAI API usage and prompt testing |
-| `02_pdf_qa_chatbot/`         | Upload a PDF and ask questions (LangChain RAG + Streamlit) |
-| `03_entity_memory_chatbot/`  | Chatbot with `ConversationEntityMemory` to remember facts |
-| `04_resume_fit_analyzer/`    | Resume-JD analysis tool with ATS score and ethical evaluation |
-| `05_langgraph_rag_chatbot/`  | LangGraph-powered chatbot with multi-step memory and routing |
-| `06_rag_chatbot_with_memory/`| Custom prompt RAG chatbot with `ConversationBufferMemory` |
-| `07_ai_portfolio_site/`      | Central Streamlit site for showcasing all GenAI apps |
+| Folder                        | Description                                                                     |
+|-------------------------------|---------------------------------------------------------------------------------|
+| `01_llm_basic/`               | Introduction to LLMs – prompt engineering, completions, and simple Q&A.         |
+| `02_pdf_qa_chatbot/`          | PDF chatbot using **embeddings + RetrievalQA**.                                 |
+| `03_entity_memory_chatbot/`   | Conversational assistant with **Entity Memory** (remembers names/entities).     |
+| `04_langgraph_rag_chatbot/`   | Retrieval-Augmented Generation (RAG) chatbot built with **LangGraph**.          |
+| `05_rag_chatbot_with_memory/` | Enhanced RAG chatbot with conversational **memory**.                            |
+| `06_ai_portfolio_site/`       | Interactive AI portfolio site built with Streamlit.                             |
+| `07_multi_agent_assistant/`   | **Advanced assistant** with Planner, Retriever, and Memory nodes via LangGraph. |
 
 ---
 
-## ✅ Setup Instructions
+## 🚀 Setup Instructions
 
 ### 1️⃣ Clone This Repository
-
 ```bash
-git clone https://github.com/vinay-genai/genai-portfolio.git
-cd genai-portfolio
-```
+git clone https://github.com/chandra-vv/genai_portfolio.git
+cd genai_portfolio
+````
 
 ### 2️⃣ Create a Virtual Environment
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate  # Linux/Mac
-# OR
-.venv\Scripts\activate     # Windows
+python -m venv venv
+source venv/bin/activate   # Linux/Mac
+venv\Scripts\activate      # Windows
 ```
 
 ### 3️⃣ Install Dependencies
-
-Navigate into each folder and install the required packages:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-If `requirements.txt` is missing, use:
-
-```bash
-pip install langchain langchain-openai streamlit faiss-cpu python-dotenv
-```
-
-### 4️⃣ Set Up Your `.env` File
+### 4️⃣ Add Your API Key
 
 Create a `.env` file in the root or project folder:
 
@@ -60,91 +50,64 @@ Create a `.env` file in the root or project folder:
 OPENAI_API_KEY=your-openai-key
 ```
 
----
-
-## 🎯 Key Skills Covered
-
-✅ OpenAI GPT-3.5 and GPT-4
-
-✅ LangChain & LangGraph
-
-✅ Retrieval-Augmented Generation (RAG)
-
-✅ Conversation Memory & Entity Tracking
-
-✅ Streamlit Dashboards
-
-✅ Prompt Engineering
-
-✅ Document Parsing & Vector Stores (FAISS)
-
-✅ Ethical GenAI Applications
-
----
-
-## 🚀 How to Run Each Project
-
-For example:
+### 5️⃣ Run a Project
 
 ```bash
-cd 02_pdf_qa_chatbot
+cd 08_multi_agent_assistant
 streamlit run app.py
 ```
+
 ---
 
-## 📢 About Me
+## 🌟 Key Skills Demonstrated
+
+* **LLMs (GPT-3.5, GPT-4)**
+* **Prompt Engineering**
+* **LangChain & LangGraph**
+* **Retrieval-Augmented Generation (RAG)**
+* **Vector Stores (FAISS)**
+* **Conversational Memory (Entity + Buffer)**
+* **Streamlit UI for AI apps**
+* **Multi-Agent Workflows**
+
+---
+
+## 👨‍💻 About Me
 
 * **Name:** Vinay Chandra Vudharam
-* **Role:** Data Engineer + GenAI Enthusiast
+* **Role:** Data Engineer & GenAI Enthusiast
 * **LinkedIn:** [vvinaychandra](https://www.linkedin.com/in/vvinaychandra/)
-* **GitHub:** [vinay-genai](https://github.com/chandra-vv)
+* **GitHub:** [chandra-vv](https://github.com/chandra-vv)
 
 ---
 
-## ✅ Final Notes
-
-These projects reflect my deep dive into practical Generative AI development — combining technical depth with ethical design.
-
-## ✔️ Sample Layout Recap:
+## ✔️ Folder Layout Recap
 
 ```
-01_llm_basics/
-    first_openai_prompt.py
-    README.md
+01_llm_basic/
+    app.py
 
 02_pdf_qa_chatbot/
     app.py
-    utils.py
-    requirements.txt
-    README.md
 
 03_entity_memory_chatbot/
     app.py
-    README.md
-    requirements.txt    
 
-04_resume_fit_analyzer/
+04_langgraph_rag_chatbot/
     app.py
-    match_engine.py
-    README.md
-    requirements.txt
-    
-05_langgraph_rag_chatbot/
-    rag_pipeline_from_scratch.py
-    rag_pipeline_streamlit.py
-    README.md
 
-06_rag_chatbot_with_memory/
+05_rag_chatbot_with_memory/
     app.py
-    README.md
-    about.txt
-    requirements.txt
-    
-07_ai_portfolio_site/
-    ai_portfolio_site_app.py
-    about.txt
-    README.md
 
+06_ai_portfolio_site/
+    app.py
+
+07_multi_agent_assistant/
+    app.py
+    graph/
+    agents/
+    about.txt
 ```
 ⭐ If you find this repository helpful, consider giving it a star on GitHub and connecting with me on LinkedIn.
+
 ---
