@@ -1,5 +1,0 @@
-langchain
-langchain-openai
-python-dotenv
-streamlit
-faiss-cpu
