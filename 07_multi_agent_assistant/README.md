@@ -138,7 +138,7 @@ Core dependencies include:
 * `faiss-cpu` – for vector search
 * `python-dotenv` – for environment variable management
 
-
+---
 
 📂 Optional Enhancements (Coming Soon)
 
