@@ -21,6 +21,7 @@ This project demonstrates a Multi-Agent Assistant framework built using **LangGr
 ---
 
 ## ⚡ Project Structure
+An advanced assistant using LangGraph to orchestrate multiple specialized agents (planner, retriever, summarizer). Supports parallel execution for faster reasoning and modular workflows.
 
 ```
 multi_agent_assistant/
