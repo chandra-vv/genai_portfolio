@@ -16,7 +16,7 @@ This repository is a structured showcase of projects built during my **step-by-s
 | `04_langgraph_rag_chatbot/`   | Retrieval-Augmented Generation (RAG) chatbot built with **LangGraph**.          |
 | `05_rag_chatbot_with_memory/` | Enhanced RAG chatbot with conversational **memory**.                            |
 | `06_ai_portfolio_site/`       | Interactive AI portfolio site built with Streamlit.                             |
-| `07_multi_agent_assistant/`   | **Advanced AI Agent assistant** with Planner, Retriever, and Memory nodes via LangGraph. |
+| `07_multi_agent_assistant/`   | **Advanced AI Agent assistant** with Planner, Retriever, Controller and Memory nodes via LangGraph. |
 
 ---
 
