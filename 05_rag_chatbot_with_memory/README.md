@@ -1,9 +1,3 @@
-
----
-
-## 📁 `06_rag_chatbot_with_memory/README.md`
-
-```markdown
 # 📚🧠 RAG Chatbot with Conversational Memory
 
 This chatbot answers questions about a document using **Retrieval-Augmented Generation (RAG)** and **Conversational Memory**. It combines OpenAI GPT-3.5, LangChain's `ConversationalRetrievalChain`, and Streamlit UI.
