@@ -1,7 +1,7 @@
 
 # ✅ Vinay Chandra – Generative AI Projects Portfolio
 
-Welcome to my **Generative AI (GenAI) Projects Portfolio**, where I combine my **Data Engineering background** with **LLM-powered applications**.  
+Welcome to my **Generative AI (GenAI) Projects Portfolio**, where I combine my hands-on experience with **LLM-powered applications**.  
 This repository is a structured showcase of projects built during my **step-by-step GenAI learning journey**, progressing from basic LLM demos to advanced **multi-agent assistants**.
 
 ---
@@ -75,7 +75,6 @@ streamlit run app.py
 ## 👨‍💻 About Me
 
 * **Name:** Vinay Chandra Vudharam
-* **Role:** Data Engineer & GenAI Enthusiast
 * **LinkedIn:** [vvinaychandra](https://www.linkedin.com/in/vvinaychandra/)
 * **GitHub:** [chandra-vv](https://github.com/chandra-vv)
 
