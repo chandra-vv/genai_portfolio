@@ -110,4 +110,8 @@ streamlit run app.py
 ```
 ⭐ If you find this repository helpful, consider giving it a star on GitHub and connecting with me on LinkedIn.
 
+<<<<<<< HEAD
 ---
+=======
+---
+>>>>>>> 99cb64b5864c5de11477e74fe1215af4132b38ee
