@@ -53,7 +53,7 @@ OPENAI_API_KEY=your-openai-key
 ### 5️⃣ Run a Project
 
 ```bash
-cd 08_multi_agent_assistant
+cd 07_multi_agent_assistant
 streamlit run app.py
 ```
 
