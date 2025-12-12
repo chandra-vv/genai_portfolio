@@ -1,13 +1,15 @@
 
 # ✅ Generative AI Engineering
 
-This repository is a hands-on **Generative AI Engineering** that demonstrates the progressive design, implementation, and orchestration of LLM-powered systems — starting from basic prompt engineering and culminating in a production-style multi-agent assistant.
+This repository is a hands-on **Generative AI Engineering portfolio** that demonstrates the progressive design, implementation, and orchestration of LLM-powered systems — starting from basic prompt engineering and culminating in a production-style multi-agent assistant.
 
 The projects are intentionally organized as step-by-step learning modules. Each folder focuses on solving a specific real-world limitation of Large Language Models (LLMs) and introduces the architectural patterns required to overcome it (retrieval, memory, orchestration, and agents).
 
 ---
 
 ## 🧭 Repository Structure
+
+Each project folder contains its own README with detailed architecture, execution steps, and learning outcomes.
 
 
 | Folder                        | Description                                                                     |
@@ -24,7 +26,7 @@ The projects are intentionally organized as step-by-step learning modules. Each 
 
 ## 📘 Project Overview (Concept → Solution → Outcome)
 
-### 🤖 Multi_agent_assistant — Advanced Multi-Agent System
+### 🤖 07_multi_agent_assistant — Advanced Multi-Agent System
 **🔴 Problem**  : Complex tasks require planning, retrieval, orchestration, and memory — single-chain chatbots are insufficient.
 
 **🟢 Solution**  : A **multi-agent assistant** with clearly separated responsibilities using LangGraph and LangChain.
@@ -39,8 +41,17 @@ The projects are intentionally organized as step-by-step learning modules. Each 
 All components are orchestrated through a graph-based workflow.
 
 ---
+### 🎨 06_ai_portfolio_site — Interactive AI Portfolio (Streamlit)
+**🔴 Problem**  : CLI-based AI demos are difficult for recruiters and non-technical users to explore.
 
-### 🧠💾 Rag_chatbot_with_memory — RAG + Conversational Memory
+**🟢 Solution**  : An interactive **Streamlit-based AI portfolio site**.
+
+**🏆 Outcome**  : A clean, visual interface to demonstrate AI projects in real time.
+
+**⚙️ How it works**  : Streamlit provides the UI layer while backend AI logic executes on user interaction.
+
+---
+### 🧠💾 05_rag_chatbot_with_memory — RAG + Conversational Memory
 **🔴 Problem**  : Standard RAG systems struggle with follow-up questions and multi-turn context.
 
 **🟢 Solution**  : This project combines document retrieval with conversational memory.
@@ -50,8 +61,7 @@ All components are orchestrated through a graph-based workflow.
 **⚙️ How it works**  : Conversation history is stored in memory and merged with retrieved document context before response generation.
 
 ---
-
-### 🔗 Langgraph_rag_chatbot — RAG with LangGraph
+### 🔗 04_langgraph_rag_chatbot — RAG with LangGraph
 **🔴 Problem**  : Linear RAG pipelines become hard to debug and scale.
 
 **🟢 Solution**  : This project uses **LangGraph** to model the RAG pipeline as a graph-based workflow.
@@ -61,8 +71,7 @@ All components are orchestrated through a graph-based workflow.
 **⚙️ How it works**  : Each step (input, retrieval, generation) is represented as a node in a graph with controlled state transitions.
 
 ---
-
-### 🧩 Entity_memory_chatbot — Conversational Assistant with Entity Memory
+### 🧩 03_entity_memory_chatbot — Conversational Assistant with Entity Memory
 **🔴 Problem**  : Traditional chatbots forget important details like names, organizations, or entities across turns.
 
 **🟢 Solution**  : This project adds **Entity Memory** so the assistant remembers and reuses key entities.
@@ -72,7 +81,7 @@ All components are orchestrated through a graph-based workflow.
 **⚙️ How it works**  : Entities are extracted from messages, stored in memory, and injected into future prompts to preserve context.
 
 ---
-### 📄 Pdf_qa_chatbot — PDF Q&A with Embeddings + Retrieval
+### 📄 02_pdf_qa_chatbot — PDF Q&A with Embeddings + Retrieval
 **🔴 Problem** : LLMs cannot access private documents and may hallucinate answers.
 
 **🟢 Solution**  : A **Retrieval-Augmented Generation (RAG)** pipeline that enables question-answering over PDFs using embeddings.
@@ -82,8 +91,7 @@ All components are orchestrated through a graph-based workflow.
 **⚙️ How it works**  : PDFs are chunked → embedded → stored in a vector index → relevant chunks are retrieved → the LLM answers using retrieved context.
 
 ---
-
-### 🧠 LLM — LLM Fundamentals
+### 🧠 01_llm_basics — LLM Fundamentals
 **🔴 Problem**  : LLMs can produce inconsistent or vague responses without well-designed prompts and constraints.
 
 **🟢 Solution**  : This project introduces prompt engineering, completions, and simple Q&A workflows to build strong LLM fundamentals.
@@ -93,7 +101,6 @@ All components are orchestrated through a graph-based workflow.
 **⚙️ How it works**  : User prompts are sent directly to the model, and iterative prompt refinement is used to improve clarity, format, and correctness.
 
 ---
-
 
 ## 🛠️ Tech Stack & Concepts Covered
 
@@ -144,10 +151,6 @@ OPENAI_API_KEY=your-openai-key
 cd 07_multi_agent_assistant
 streamlit run app.py
 ```
-
----
-
-
 
 ---
 
