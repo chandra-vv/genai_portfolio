@@ -32,7 +32,54 @@ Unlike single-chain chatbots, this assistant follows an **agentic architecture**
 
 ## 🧩 System Architecture
 
-The assistant is implemented as a **graph of nodes**, where each node has a clearly defined responsibility.
+The assistant is implemented as a **graph-based workflow**, where each node has a clearly defined responsibility.
+
+### Architecture Diagram (Logical Flow)
+
+User  
+│  
+▼  
+Streamlit UI  
+│  
+▼  
+Controller (LangGraph)  
+│  
+├── If query is SIMPLE  
+│       └── Retriever Agent  
+│               ├── Embeddings  
+│               ├── FAISS Vector Search  
+│               └── LLM Response  
+│  
+└── If query is COMPLEX  
+        └── Planner Agent  
+                ├── Sub-question 1 ──► Retriever Agent ──► Answer  
+                ├── Sub-question 2 ──► Retriever Agent ──► Answer  
+                ├── Sub-question N ──► Retriever Agent ──► Answer  
+                │  
+                └── Aggregate Results  
+                        │  
+                        ▼  
+                  Final LLM Response  
+
+Memory Node  
+▲  
+│  
+Stores conversation context across turns  
+
+---
+
+## 🔄 Execution Flow
+
+1. User submits a query through the Streamlit UI  
+2. Controller classifies the query as simple or complex  
+3. Planner agent generates sub-questions (for complex queries)  
+4. Retriever agent answers using embeddings and FAISS  
+5. LangGraph orchestrates looping and state updates  
+6. Conversation memory is updated  
+7. Final answers are displayed in the UI  
+
+---
+
 
 ### Core Components
 
