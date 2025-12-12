@@ -189,4 +189,3 @@ streamlit run app.py
 ---
 ⭐ If you find this repository helpful, consider giving it a star on GitHub and connecting with me on LinkedIn.
 
----
