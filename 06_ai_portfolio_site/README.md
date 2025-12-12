@@ -62,9 +62,8 @@ Final Response Displayed to User
 ## 🗂️ Project Structure
 
 06_ai_portfolio_site/  
-├── app.py – Streamlit application  
-├── about.txt – Knowledge base (profile and project details)  
-├── requirements.txt – Python dependencies  
+├── ai_portfolio_site_app.py – Streamlit application  
+├── about.txt – Knowledge base (profile and project details)    
 └── README.md – Project documentation  
 
 ---
