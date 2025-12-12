@@ -83,7 +83,7 @@ All components are orchestrated through a graph-based workflow.
 
 ---
 
-### 🧠 LLm — LLM Fundamentals
+### 🧠 LLM — LLM Fundamentals
 **🔴 Problem**  : LLMs can produce inconsistent or vague responses without well-designed prompts and constraints.
 
 **🟢 Solution**  : This project introduces prompt engineering, completions, and simple Q&A workflows to build strong LLM fundamentals.
