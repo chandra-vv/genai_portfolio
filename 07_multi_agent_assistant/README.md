@@ -1,169 +1,173 @@
 # 🧠 LangGraph Multi-Agent Assistant
 
-This project demonstrates a Multi-Agent Assistant framework built using **LangGraph**, **LangChain**, **RAG**, **VectorDB**, **Embedding**, **Agents**, and **Streamlit**. The assistant can answer complex user questions by breaking them into sub-questions, retrieving context-aware answers, and maintaining session memory — all while optionally using uploaded documents.
+This project implements an advanced **Multi-Agent AI Assistant** using **LangGraph** and **LangChain**.  
+It is designed to handle complex user queries by decomposing them into smaller tasks, retrieving relevant knowledge using embeddings and vector databases, and orchestrating execution through a graph-based workflow.
 
-📌 **Key Features**
-
-✅ **Multi-Agent Collaboration** using LangGraph
-
-✅ **Planner Agent** breaks down a complex user query into smaller, focused sub-questions.
-
-✅ **Retriever Agent** answer each sub-question by searching an uploaded text file.
-
-✅ **Memory Node** to retain and display full conversation context
-
-✅ **Interactive UI** built with Streamlit (supports tabbed views)
-
-✅ **Optional Document Upload** to query custom knowledge
-
-✅ Powered by **OpenAI GPT-3.5 Turbo** and **FAISS vector store**
+Unlike single-chain chatbots, this assistant follows an **agentic architecture** that supports planning, retrieval, memory, and intelligent routing. An interactive **Streamlit UI** allows users to experiment with the system and optionally query custom documents.
 
 ---
 
-## ⚡ Project Structure
-An advanced assistant using LangGraph to orchestrate multiple specialized agents (planner, retriever, summarizer). Supports parallel execution for faster reasoning and modular workflows.
+## 🎯 Project Objectives
 
-```
-multi_agent_assistant/
-│
-├── agents/
-│   ├── planner_agent.py          # Planner: splits complex queries into sub-questions
-│   └── retriever_agent.py        # Retriever: answers sub-questions using embeddings + FAISS
-│
-├── graph/
-│   └── langgraph_multi_agent.py  # Graph wiring: planner → retriever (loop) → end.
-|      # The controller node analyzes the query and determines whether to send it to the planner agent or the retrieve agent based on the complexity of the query. 
-|        For example:
-|        1. If the query is complex, the process follows this path: planner → retriever (loop) → end.
-|        2. If the query is not complex, it directly navigates to the retriever (with no sub-questions).
-|
-│
-├── about.txt                     # Knowledge base (This is the sample .txt file for testing. You can use your own .txt file and play with it.)
-├── app.py                        # Streamlit UI
-├── requirements.txt              # Python dependencies
-└── README.md                     # Project documentation
-```
+- Build a production-style multi-agent system using LangGraph
+- Demonstrate query planning and task decomposition
+- Implement Retrieval-Augmented Generation (RAG)
+- Maintain conversation memory and context
+- Provide an interactive UI for experimentation and learning
+
+---
+
+## ✨ Key Features
+
+- 🤖 Multi-Agent Architecture orchestrated using LangGraph  
+- 🧠 Planner Agent to break complex queries into sub-questions  
+- 🔍 Retriever Agent powered by embeddings and FAISS  
+- 🎛️ Controller logic to route queries based on complexity  
+- 💾 Conversation memory for contextual continuity  
+- 📄 Optional document upload for custom knowledge  
+- 🎨 Interactive Streamlit interface  
+- ⚡ Powered by OpenAI GPT-3.5 Turbo  
+
+---
+
+## 🧩 System Architecture
+
+The assistant is implemented as a **graph of nodes**, where each node has a clearly defined responsibility.
+
+### Core Components
+
+- **Planner Agent**  
+  Decomposes complex user queries into smaller, focused sub-questions.
+
+- **Retriever Agent**  
+  Answers questions using embeddings and FAISS-based vector similarity search.
+
+- **Controller (Graph Logic)**  
+  Determines execution flow:
+  - Complex queries → Planner → Retriever (loop) → End  
+  - Simple queries → Retriever → End  
+
+- **Memory Node**  
+  Stores and displays conversation context across turns.
+
+---
+
+## 🔄 Execution Flow
+
+1. User submits a query through the Streamlit UI  
+2. Graph classifies the query as simple or complex  
+3. Planner agent generates sub-questions (if required)  
+4. Retriever agent answers using embeddings + FAISS  
+5. LangGraph orchestrates execution and state updates  
+6. Conversation memory is updated  
+7. Final answers are displayed in the UI  
+
+---
+
+## 🗂️ Project Structure
+
+07_multi_agent_assistant/  
+├── agents/  
+│   ├── planner_agent.py        ## Generates sub-questions for complex queries  
+│   └── retriever_agent.py      ## Retrieves answers using embeddings and FAISS  
+│  
+├── graph/  
+│   └── langgraph_multi_agent.py  # LangGraph workflow and routing logic  
+│  
+├── about.txt                   # Sample knowledge base (replaceable)  
+├── app.py                      # Streamlit UI and entry point  
+├── requirements.txt            # Python dependencies  
+└── README.md                   # Project documentation  
+
+---
+
+## 📘 Example
+
+**Input Question**
+
+How do embeddings improve Retrieval-Augmented Generation (RAG)?
+
+**Generated Sub-Questions**
+- What are embeddings?
+- What is Retrieval-Augmented Generation?
+- How do embeddings enable semantic search?
+
+**Sample Output**
+- Embeddings represent text as numerical vectors capturing semantic meaning.  
+- In RAG systems, embeddings enable similarity-based retrieval of relevant documents.
 
 ---
 
 ## 🚀 Getting Started
 
-### 1. Clone the repo
+### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/chandra-vv/genai_portfolio.git  
+cd genai_portfolio/07_multi_agent_assistant  
 ```
-
-### 2. Create and activate a virtual environment
+### 2️⃣ Create and Activate Virtual Environment
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate      # macOS/Linux
-.venv\Scripts\activate         # Windows
+python -m venv venv  
+source venv/bin/activate      # macOS / Linux  
+venv\\Scripts\\activate       # Windows  
 ```
 
-### 3. Install dependencies
+### 3️⃣ Install Dependencies
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt  
 ```
 
-### 4. Set up environment variables
-
-Create a `.env` file in the project root:
+### 4️⃣ Configure Environment Variables
 
 ```bash
-OPENAI_API_KEY=your_openai_api_key_here
+Create a `.env` file:
+
+OPENAI_API_KEY=your_openai_api_key  
 ```
 
-### 5. Run the Streamlit app
+### 5️⃣ Run the Application
 
 ```bash
-streamlit run app.py
+streamlit run app.py  
 ```
+---
+
+## 🛠️ Technology Stack
+
+- Python  
+- LangChain  
+- LangGraph  
+- OpenAI (GPT-3.5 Turbo)  
+- FAISS (Vector Database)  
+- Embeddings  
+- Streamlit  
+- python-dotenv  
 
 ---
 
-## 🧩 How It Works
+## 📈 Learning Outcomes
 
-1. **User Input**:
-   The user types a complex question into the Streamlit UI.
-
-2. **Planner Agent** (`planner_agent.py`):
-   Uses an LLM to generate a list of sub-questions.
-
-3. **Retriever Agent** (`retriever_agent.py`):
-   Uses embeddings + FAISS vector search to answer each sub-question using `about.txt`.
-
-4. **LangGraph Orchestration** (`langgraph_multi_agent.py`):
-   Wires planner → retriever in a loop until all sub-questions are answered.
-
-5. **UI Output** (`app.py`):
-   Displays sub-questions and answers.
+This project demonstrates:
+- Agent-based AI system design
+- When to use planning vs direct retrieval
+- How to orchestrate workflows using LangGraph
+- How to combine RAG with memory
+- How to build scalable and explainable GenAI systems
 
 ---
 
-## 📚 Example
+## 🔮 Future Enhancements
 
-**Input question:**
-
-```
-How do embeddings help improve RAG pipelines?
-```
-
-**Output (sample):**
-
-* **Sub-questions**
-
-  * What are embeddings?
-  * What is RAG (Retrieval-Augmented Generation)?
-  * How do embeddings support retrieval in RAG?
-
-* **Answers**
-
-  * *Q: What are embeddings?*
-    *A: Embeddings are numerical representations of text or data…*
+- Add a summarizer agent for long responses  
+- Add scoring or ranking agents  
+- Support PDF and CSV document ingestion  
+- Improve memory using embedding-based recall  
+- Enable parallel planning and retrieval  
+- Deploy on Streamlit Cloud  
 
 ---
 
-## 🛠️ Requirements
-
-See [`requirements.txt`](requirements.txt) for exact package versions.
-Core dependencies include:
-
-* `streamlit` – for the UI
-* `langchain`, `langgraph` – for workflow orchestration
-* `langchain-openai`, `openai` – for LLM access
-* `faiss-cpu` – for vector search
-* `python-dotenv` – for environment variable management
-
----
-
-📂 Optional Enhancements (Coming Soon)
-
-✅ Add summarizer node (e.g., to condense large answers)
-
-✅ Add scoring/ranking agent
-
-🔲 Support for PDF/CSV uploads
-
-🔲 Add multi-modal support (text + image)
-
-🔲 Deploy to Streamlit Cloud
-
----
-
-🤖 Future Work
-
- Actively working on:
-
-🔲 Fixing LangGraph update state errors
-
-🔲 Improving summarizer logic
-
-🔲 Enhancing memory with embeddings
-
-🔲 Making response flow more robust (parallel planning + retrieval)
-
----
+⭐ This project serves as a reference implementation for building **agentic Generative AI systems** using LangGraph.
