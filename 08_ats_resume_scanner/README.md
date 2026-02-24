@@ -4,6 +4,24 @@
 
 ---
 
+## 🖥️ Demo
+
+### Upload Resume & Job Description
+![Upload Screen](screenshots/01_upload.png)
+
+### ATS Score & Rationale
+![Results](screenshots/02_results.png)
+
+### Skill Match
+![Skill Match](screenshots/03_skill_match.png)
+
+### Gap Analysis
+![Gap Analysis](screenshots/04_gap_analysis.png)
+
+### Improvement Suggestions
+![Suggestions](screenshots/05_suggestions.png)
+
+---
 ## 📌 What is ATS Resume Scanner?
 
 **ATS Resume Scanner** is a production-grade, multi-agent AI pipeline that evaluates how well your resume matches a job description — exactly the way real Applicant Tracking Systems (ATS) do.
