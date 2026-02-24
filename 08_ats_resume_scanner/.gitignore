@@ -1,0 +1,64 @@
+# ─────────────────────────────────────────────
+# ATS Resume Scanner — .gitignore
+# ─────────────────────────────────────────────
+
+# 🔐 Secret Keys — NEVER push
+.env
+*.env
+secrets.toml
+.streamlit/secrets.toml
+
+# 🐍 Python Cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pycache
+
+# 📦 Virtual Environment
+venv/
+.venv/
+env/
+ENV/
+.env/
+*.egg-info/
+dist/
+build/
+
+# 🧪 Testing
+.pytest_cache/
+.coverage
+htmlcov/
+*.test
+
+# 📓 Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# 🖥️ OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 💻 IDEs & Editors
+.idea/
+.vscode/
+*.suo
+*.swp
+*.swo
+*~
+
+# 📊 Data & Uploads (optional — remove if you want to track these)
+*.pdf
+*.docx
+*.csv
+*.xlsx
+
+# 🗃️ FAISS Index (auto-generated, no need to push)
+faiss_index/
+*.faiss
+*.pkl
+
+# 📝 Logs
+*.log
+logs/
