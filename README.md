@@ -1,194 +1,251 @@
+<div align="center">
 
-# ✅ Generative AI Engineering
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=32&duration=3000&pause=1000&color=6C63FF&center=true&vCenter=true&width=600&lines=Generative+AI+Engineering;RAG+%7C+Agents+%7C+LangGraph;Production-Grade+AI+Systems" alt="Typing SVG" />
 
-This repository is a hands-on **Generative AI Engineering portfolio** that demonstrates the progressive design, implementation, and orchestration of LLM-powered systems — starting from basic prompt engineering and culminating in a production-style multi-agent assistant.
+  <h3>⚡ Production-grade Generative AI portfolio — RAG pipelines, multi-agent systems, LangGraph orchestration, and LLMOps</h3>
 
-The projects are intentionally organized as step-by-step learning modules. Each folder focuses on solving a specific real-world limitation of Large Language Models (LLMs) and introduces the architectural patterns required to overcome it (retrieval, memory, orchestration, and agents).
+  <p>
+    <a href="https://www.linkedin.com/in/vvinaychandra/">
+      <img src="https://img.shields.io/badge/LinkedIn-vvinaychandra-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+    </a>
+    <a href="https://github.com/chandra-vv">
+      <img src="https://img.shields.io/badge/GitHub-chandra--vv-181717?style=for-the-badge&logo=github&logoColor=white" />
+    </a>
+    <a href="mailto:vinaychandra0305@gmail.com">
+      <img src="https://img.shields.io/badge/Email-Contact%20Me-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+    </a>
+  </p>
 
----
+  <p>
+    <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white" />
+    <img src="https://img.shields.io/badge/LangChain-Latest-1C3C3C?style=flat-square" />
+    <img src="https://img.shields.io/badge/LangGraph-Latest-FF6B6B?style=flat-square" />
+    <img src="https://img.shields.io/badge/OpenAI-GPT--4o-412991?style=flat-square&logo=openai&logoColor=white" />
+    <img src="https://img.shields.io/badge/FAISS-VectorStore-009688?style=flat-square" />
+    <img src="https://img.shields.io/badge/Streamlit-Latest-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" />
+    <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" />
+  </p>
 
-## 🧭 Repository Structure
+  <p>
+    <a href="#-projects">Projects</a> •
+    <a href="#-architecture">Architecture</a> •
+    <a href="#-tech-stack">Tech Stack</a> •
+    <a href="#-getting-started">Getting Started</a> •
+    <a href="#-about-me">About Me</a>
+  </p>
 
-Each project folder contains its own README with detailed architecture, execution steps, and learning outcomes.
-
-
-| Folder                        | Description                                                                     |
-|-------------------------------|---------------------------------------------------------------------------------|
-| `01_llm_basic/`               | Introduction to LLMs – prompt engineering, completions, and simple Q&A.         |
-| `02_pdf_qa_chatbot/`          | PDF chatbot using **embeddings + RetrievalQA**.                                 |
-| `03_entity_memory_chatbot/`   | Conversational assistant with **Entity Memory** (remembers names/entities).     |
-| `04_langgraph_rag_chatbot/`   | Retrieval-Augmented Generation (RAG) chatbot built with **LangGraph**.          |
-| `05_rag_chatbot_with_memory/` | Enhanced RAG chatbot with conversational **memory**.                            |
-| `06_ai_portfolio_site/`       | Interactive AI portfolio site built with Streamlit.                             |
-| `07_multi_agent_assistant/`   | **Advanced AI Agent assistant** with Planner, Retriever, Controller and Memory nodes via LangGraph, Langchain, Vector DBs and Embedding. |
-
----
-
-## 📘 Project Overview (Concept → Solution → Outcome)
-
-### 🤖 07_multi_agent_assistant — Advanced Multi-Agent System
-**🔴 Problem**  : Complex tasks require planning, retrieval, orchestration, and memory — single-chain chatbots are insufficient.
-
-**🟢 Solution**  : A **multi-agent assistant** with clearly separated responsibilities using LangGraph and LangChain.
-
-**🏆 Outcome**  : A scalable, production-style AI assistant capable of complex reasoning and task execution.
-
-**⚙️ How it works**
-- 🧠 **Planner** decomposes tasks into steps  
-- 🔍 **Retriever** fetches relevant knowledge using embeddings and vector databases  
-- 🎛️ **Controller** manages decision flow and tool execution  
-- 💾 **Memory** maintains short- and long-term conversational context  
-All components are orchestrated through a graph-based workflow.
-
----
-### 🎨 06_ai_portfolio_site — Interactive AI Portfolio (Streamlit)
-**🔴 Problem**  : CLI-based AI demos are difficult for recruiters and non-technical users to explore.
-
-**🟢 Solution**  : An interactive **Streamlit-based AI portfolio site**.
-
-**🏆 Outcome**  : A clean, visual interface to demonstrate AI projects in real time.
-
-**⚙️ How it works**  : Streamlit provides the UI layer while backend AI logic executes on user interaction.
-
----
-### 🧠💾 05_rag_chatbot_with_memory — RAG + Conversational Memory
-**🔴 Problem**  : Standard RAG systems struggle with follow-up questions and multi-turn context.
-
-**🟢 Solution**  : This project combines document retrieval with conversational memory.
-
-**🏆 Outcome**  : Context-aware, multi-turn conversations grounded in external knowledge.
-
-**⚙️ How it works**  : Conversation history is stored in memory and merged with retrieved document context before response generation.
-
----
-### 🔗 04_langgraph_rag_chatbot — RAG with LangGraph
-**🔴 Problem**  : Linear RAG pipelines become hard to debug and scale.
-
-**🟢 Solution**  : This project uses **LangGraph** to model the RAG pipeline as a graph-based workflow.
-
-**🏆 Outcome**  : Cleaner control flow, explicit state management, and production-friendly architecture.
-
-**⚙️ How it works**  : Each step (input, retrieval, generation) is represented as a node in a graph with controlled state transitions.
-
----
-### 🧩 03_entity_memory_chatbot — Conversational Assistant with Entity Memory
-**🔴 Problem**  : Traditional chatbots forget important details like names, organizations, or entities across turns.
-
-**🟢 Solution**  : This project adds **Entity Memory** so the assistant remembers and reuses key entities.
-
-**🏆 Outcome**  : More natural, consistent, and context-aware conversations.
-
-**⚙️ How it works**  : Entities are extracted from messages, stored in memory, and injected into future prompts to preserve context.
-
----
-### 📄 02_pdf_qa_chatbot — PDF Q&A with Embeddings + Retrieval
-**🔴 Problem** : LLMs cannot access private documents and may hallucinate answers.
-
-**🟢 Solution**  : A **Retrieval-Augmented Generation (RAG)** pipeline that enables question-answering over PDFs using embeddings.
-
-**🏆 Outcome**  : Accurate, document-grounded answers with reduced hallucination.
-
-**⚙️ How it works**  : PDFs are chunked → embedded → stored in a vector index → relevant chunks are retrieved → the LLM answers using retrieved context.
-
----
-### 🧠 01_llm_basics — LLM Fundamentals
-**🔴 Problem**  : LLMs can produce inconsistent or vague responses without well-designed prompts and constraints.
-
-**🟢 Solution**  : This project introduces prompt engineering, completions, and simple Q&A workflows to build strong LLM fundamentals.
-
-**🏆 Outcome**  : Reliable, structured, and controlled LLM outputs.
-
-**⚙️ How it works**  : User prompts are sent directly to the model, and iterative prompt refinement is used to improve clarity, format, and correctness.
+</div>
 
 ---
 
-## 🛠️ Tech Stack & Concepts Covered
+## 📌 About This Portfolio
 
-- 🧠 Large Language Models (LLMs)
-- ✍️ Prompt Engineering
-- 📐 Embeddings & Vector Databases
-- 🔎 Retrieval-Augmented Generation (RAG)
-- 🧩 Conversational & Entity Memory
-- 🔗 LangChain & LangGraph
-- 🤖 Multi-Agent Architectures
-- 🎨 Streamlit for AI Applications
+A hands-on **Generative AI Engineering portfolio** demonstrating production-grade AI system design — from foundational LLM interactions to enterprise-scale multi-agent pipelines. Each project is built to solve a real-world AI engineering challenge.
+
 
 ---
 
-## 🚀 Setup Instructions
+## 🚀 Projects
 
-### 1️⃣ Clone This Repository
+| # | Project | Description | Key Tech | Demo |
+|---|---------|-------------|----------|------|
+| 08 | [**ATS Resume Scanner**](./08_ats_resume_scanner/) | Multi-agent ATS scoring system with RAG pipeline — scores resumes 0-100 with skill matching, gap analysis & suggestions | LangGraph · RAG · FAISS · OpenAI | [▶ View](./08_ats_resume_scanner/) |
+| 07 | [**Multi-Agent Assistant**](./07_multi_agent_assistant/) | Advanced agentic system with Planner, Retriever, Controller & Memory nodes for complex multi-step reasoning | LangGraph · LangChain · Agents | [▶ View](./07_multi_agent_assistant/) |
+| 06 | [**AI Portfolio Site**](./06_ai_portfolio_site/) | Interactive Streamlit portfolio site for live AI project demonstrations | Streamlit · OpenAI | [▶ View](./06_ai_portfolio_site/) |
+| 05 | [**RAG Chatbot with Memory**](./05_rag_chatbot_with_memory/) | Context-aware RAG chatbot combining document retrieval with multi-turn conversational memory | LangChain · FAISS · Memory | [▶ View](./05_rag_chatbot_with_memory/) |
+| 04 | [**LangGraph RAG Chatbot**](./04_langgraph_rag_chatbot/) | RAG pipeline modeled as a LangGraph state machine with typed state and controlled transitions | LangGraph · RAG · FAISS | [▶ View](./04_langgraph_rag_chatbot/) |
+| 03 | [**Entity Memory Chatbot**](./03_entity_memory_chatbot/) | Conversational assistant that recalls names, organizations & facts across turns | LangChain · Entity Memory | [▶ View](./03_entity_memory_chatbot/) |
+| 02 | [**PDF Q&A Chatbot**](./02_pdf_qa_chatbot/) | Document intelligence system for accurate PDF Q&A using embeddings and vector retrieval | LangChain · FAISS · Embeddings | [▶ View](./02_pdf_qa_chatbot/) |
+| 01 | [**LLM Basics**](./01_llm_basic/) | Foundational prompt engineering, completions, and structured Q&A workflows | OpenAI API · Prompt Engineering | [▶ View](./01_llm_basic/) |
+
+---
+
+## 🏗️ Architecture
+
+### Flagship Project — ATS Resume Scanner (Project 08)
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│                        STREAMLIT UI                              │
+│              Resume Upload  ·  JD Input  ·  Results              │
+└─────────────────────────┬────────────────────────────────────────┘
+                          │
+                          ▼
+┌──────────────────────────────────────────────────────────────────┐
+│                    LANGGRAPH PIPELINE                            │
+│                                                                  │
+│  ┌─────────────────┐                                            │
+│  │  RAG Node        │  JD chunks → OpenAI Embeddings → FAISS    │
+│  │                  │  → retrieves top-k relevant sections       │
+│  └────────┬─────────┘                                           │
+│           ▼                                                      │
+│  ┌─────────────────┐                                            │
+│  │  Scoring Node    │  ATS Score 0–100 · Structured JSON        │
+│  └────────┬─────────┘                                           │
+│           ▼                                                      │
+│  ┌─────────────────┐                                            │
+│  │  Skill Match     │  Matched ✅ vs Missing ❌ Skills           │
+│  └────────┬─────────┘                                           │
+│           ▼                                                      │
+│  ┌─────────────────┐                                            │
+│  │  Gap Analysis    │  Experience & Qualification Gaps           │
+│  └────────┬─────────┘                                           │
+│           ▼                                                      │
+│  ┌─────────────────┐                                            │
+│  │  Suggestions     │  3–5 Actionable Resume Improvements        │
+│  └────────┬─────────┘                                           │
+│           ▼                                                      │
+│       📄 Downloadable Markdown Report                            │
+└──────────────────────────────────────────────────────────────────┘
+```
+
+### Portfolio Architecture — Progressive Complexity
+
+```
+Foundation          Retrieval           Orchestration        Production
+─────────           ─────────           ─────────────        ──────────
+01_llm_basic   →   02_pdf_qa      →    04_langgraph   →    07_multi_agent
+                   03_entity_mem  →    05_rag_memory  →    08_ats_scanner
+                                       06_portfolio
+```
+
+---
+
+## ✨ Key Features Across Projects
+
+- **RAG Pipelines** — FAISS vector search with OpenAI Embeddings for semantic retrieval
+- **LangGraph State Machines** — typed state, explicit nodes, controlled transitions
+- **Multi-Agent Orchestration** — Planner, Retriever, Controller, Memory agents
+- **Structured LLM Outputs** — JSON-validated responses, no fragile regex parsing
+- **Production UI** — Streamlit apps with file upload, real-time results, downloadable reports
+- **LLMOps Practices** — prompt engineering, output validation, error handling, API key security
+
+---
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+| Category | Technologies |
+|----------|-------------|
+| **LLMs** | ![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o%20%7C%20GPT--4o--mini-412991?style=flat-square&logo=openai) |
+| **Orchestration** | ![LangGraph](https://img.shields.io/badge/LangGraph-StateGraph-FF6B6B?style=flat-square) ![LangChain](https://img.shields.io/badge/LangChain-LCEL-1C3C3C?style=flat-square) |
+| **RAG & Vector DB** | ![FAISS](https://img.shields.io/badge/FAISS-VectorStore-009688?style=flat-square) ![Embeddings](https://img.shields.io/badge/OpenAI-Embeddings-412991?style=flat-square) |
+| **UI & Deployment** | ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit) |
+| **Language** | ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python) |
+| **File Parsing** | ![pdfplumber](https://img.shields.io/badge/pdfplumber-PDF-red?style=flat-square) ![docx2txt](https://img.shields.io/badge/docx2txt-DOCX-blue?style=flat-square) |
+
+</div>
+
+---
+
+## ⚡ Getting Started
+
+**Prerequisites:** Python 3.10+, OpenAI API key
+
 ```bash
+# 1. Clone the repository
 git clone https://github.com/chandra-vv/genai_portfolio.git
 cd genai_portfolio
-````
 
-### 2️⃣ Create a Virtual Environment
+# 2. Navigate to any project
+cd 08_ats_resume_scanner
 
-```bash
+# 3. Create and activate virtual environment
 python -m venv venv
-source venv/bin/activate   # Linux/Mac
-venv\Scripts\activate      # Windows
-```
+venv\Scripts\activate        # Windows
+source venv/bin/activate     # Mac/Linux
 
-### 3️⃣ Install Dependencies
-
-```bash
+# 4. Install dependencies
 pip install -r requirements.txt
-```
 
-### 4️⃣ Add Your API Key
+# 5. Set up environment
+cp .env.example .env
+# Add your OpenAI API key to .env
 
-Create a `.env` file in the root or project folder:
-
-```
-OPENAI_API_KEY=your-openai-key
-```
-
-### 5️⃣ Run a Project
-
-```bash
-cd 07_multi_agent_assistant
+# 6. Run
 streamlit run app.py
 ```
 
+> Each project folder contains its own `README.md` with detailed setup instructions and architecture notes.
+
 ---
 
-## ✔️ Folder Layout Recap
+## 🗺️ Roadmap
+
+- [x] LLM Basics & Prompt Engineering
+- [x] PDF Q&A with RAG
+- [x] Entity Memory Chatbot
+- [x] LangGraph RAG Pipeline
+- [x] RAG with Conversational Memory
+- [x] AI Portfolio Site
+- [x] Multi-Agent Assistant
+- [x] ATS Resume Scanner
+- [ ] Deploy projects to Streamlit Cloud with live demo links
+- [ ] Add LLM Fine-tuning project
+- [ ] Add LLMOps monitoring with MLflow
+- [ ] Add voice AI / multimodal project
+
+---
+
+## 📁 Repository Structure
 
 ```
-01_llm_basic/
-    app.py
-
-02_pdf_qa_chatbot/
-    app.py
-
-03_entity_memory_chatbot/
-    app.py
-
-04_langgraph_rag_chatbot/
-    app.py
-
-05_rag_chatbot_with_memory/
-    app.py
-
-06_ai_portfolio_site/
-    app.py
-
-07_multi_agent_assistant/
-    app.py
-    graph/
-    agents/
-    about.txt
+genai_portfolio/
+├── 01_llm_basic/                   # LLM fundamentals
+├── 02_pdf_qa_chatbot/              # PDF Q&A with RAG
+├── 03_entity_memory_chatbot/       # Entity memory conversations
+├── 04_langgraph_rag_chatbot/       # LangGraph RAG pipeline
+├── 05_rag_chatbot_with_memory/     # RAG + conversational memory
+├── 06_ai_portfolio_site/           # Streamlit portfolio site
+├── 07_multi_agent_assistant/       # Multi-agent system
+│   ├── app.py
+│   ├── graph/
+│   └── agents/
+├── 08_ats_resume_scanner/          # ATS Resume Scanner ⭐
+│   ├── app.py
+│   ├── requirements.txt
+│   ├── README.md
+│   ├── .env.example
+│   ├── .streamlit/
+│   └── screenshots/
+└── README.md
 ```
+
 ---
 
 ## 👨‍💻 About Me
 
-* **Name:** Vinay Chandra Vudharam
-* **LinkedIn:** [vvinaychandra](https://www.linkedin.com/in/vvinaychandra/)
-* **GitHub:** [chandra-vv](https://github.com/chandra-vv)
+<div align="center">
+
+**Vinay Chandra Vudharam**
+
+<p>
+  <a href="https://www.linkedin.com/in/vvinaychandra/">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="mailto:vinaychandra0305@gmail.com">
+    <img src="https://img.shields.io/badge/Email-Contact%20Me-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+  <a href="https://github.com/chandra-vv">
+    <img src="https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+</p>
+
+</div>
 
 ---
-⭐ If you find this repository helpful, consider giving it a star on GitHub and connecting with me on LinkedIn.
 
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+<div align="center">
+
+⭐ **If you find this portfolio helpful, please give it a star!** ⭐
+
+*It helps others discover this work and supports my job search.*
+
+</div>
