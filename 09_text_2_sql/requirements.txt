@@ -1,0 +1,6 @@
+streamlit>=1.32.0
+openai>=1.14.0          # Used as Groq-compatible SDK client
+mysql-connector-python>=8.3.0
+python-dotenv>=1.0.0
+pandas>=2.0.0
+sqlparse>=0.5.0
