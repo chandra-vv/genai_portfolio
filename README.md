@@ -49,6 +49,7 @@ A hands-on **Generative AI Engineering portfolio** demonstrating production-grad
 
 | # | Project | Description | Key Tech | Demo |
 |---|---------|-------------|----------|------|
+| 09 | [**Text-to-SQL Studio**](./09_text_2_sql/) | Natural language to SQL engine — auto-generates, runs & self-fixes SQL queries against a MySQL database using Groq AI | Groq AI · LLaMA 3.3 · MySQL · Streamlit | [▶ View](./09_text_2_sql/) |
 | 08 | [**ATS Resume Scanner**](./08_ats_resume_scanner/) | Multi-agent ATS scoring system with RAG pipeline — scores resumes 0-100 with skill matching, gap analysis & suggestions | LangGraph · RAG · FAISS · OpenAI | [▶ View](./08_ats_resume_scanner/) |
 | 07 | [**Multi-Agent Assistant**](./07_multi_agent_assistant/) | Advanced agentic system with Planner, Retriever, Controller & Memory nodes for complex multi-step reasoning | LangGraph · LangChain · Agents | [▶ View](./07_multi_agent_assistant/) |
 | 06 | [**AI Portfolio Site**](./06_ai_portfolio_site/) | Interactive Streamlit portfolio site for live AI project demonstrations | Streamlit · OpenAI | [▶ View](./06_ai_portfolio_site/) |
@@ -106,7 +107,7 @@ Foundation          Retrieval           Orchestration        Production
 ─────────           ─────────           ─────────────        ──────────
 01_llm_basic   →   02_pdf_qa      →    04_langgraph   →    07_multi_agent
                    03_entity_mem  →    05_rag_memory  →    08_ats_scanner
-                                       06_portfolio
+                                       06_portfolio    →    09_text2sql
 ```
 
 ---
@@ -181,6 +182,7 @@ streamlit run app.py
 - [x] AI Portfolio Site
 - [x] Multi-Agent Assistant
 - [x] ATS Resume Scanner
+- [x] Text-to-SQL Studio
 - [ ] Deploy projects to Streamlit Cloud with live demo links
 - [ ] Add LLM Fine-tuning project
 - [ ] Add LLMOps monitoring with MLflow
@@ -209,6 +211,12 @@ genai_portfolio/
 │   ├── .env.example
 │   ├── .streamlit/
 │   └── screenshots/
+├── 09_text_2_sql/                  # Text-to-SQL Studio
+│   ├── app.py
+│   ├── db.py
+│   ├── llm.py
+│   ├── requirements.txt
+│   └── .env.example
 └── README.md
 ```
 
