@@ -18,7 +18,10 @@ A **Streamlit** web application that lets you query your **MySQL** database usin
 
 ## 🖥️ Screenshots
 
-> _Add screenshots here after setup_
+> <img width="949" height="491" alt="image" src="https://github.com/user-attachments/assets/4523fca1-4a0e-4e6e-94b9-2e2ad94fb582" />
+<img width="941" height="464" alt="image" src="https://github.com/user-attachments/assets/bd30db94-1bb2-4221-80a5-1c0163191a94" />
+
+
 
 ---
 
