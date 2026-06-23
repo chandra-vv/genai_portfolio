@@ -21,8 +21,3 @@ env/
 .DS_Store
 Thumbs.db
 
-# Generated images
-*.png
-*.jpg
-*.jpeg
-*.webp
