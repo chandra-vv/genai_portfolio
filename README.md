@@ -49,6 +49,7 @@ A hands-on **Generative AI Engineering portfolio** demonstrating production-grad
 
 | # | Project | Description | Key Tech | Demo |
 |---|---------|-------------|----------|------|
+| 11 | [**Meeting Minutes Voice Assistant**](./11_meeting_minutes_voice_assistant/) | Transcribes a meeting recording with HF Whisper and generates structured minutes — summary, discussion points, action items — with OpenAI | Hugging Face · Whisper · OpenAI · tenacity | [▶ View](./11_meeting_minutes_voice_assistant/) |
 | 09 | [**Text-to-SQL Studio**](./09_text_2_sql/) | Natural language to SQL engine — auto-generates, runs & self-fixes SQL queries against a MySQL database using Groq AI | Groq AI · LLaMA 3.3 · MySQL · Streamlit | [▶ View](./09_text_2_sql/) |
 | 08 | [**ATS Resume Scanner**](./08_ats_resume_scanner/) | Multi-agent ATS scoring system with RAG pipeline — scores resumes 0-100 with skill matching, gap analysis & suggestions | LangGraph · RAG · FAISS · OpenAI | [▶ View](./08_ats_resume_scanner/) |
 | 07 | [**Multi-Agent Assistant**](./07_multi_agent_assistant/) | Advanced agentic system with Planner, Retriever, Controller & Memory nodes for complex multi-step reasoning | LangGraph · LangChain · Agents | [▶ View](./07_multi_agent_assistant/) |
@@ -186,7 +187,7 @@ streamlit run app.py
 - [ ] Deploy projects to Streamlit Cloud with live demo links
 - [ ] Add LLM Fine-tuning project
 - [ ] Add LLMOps monitoring with MLflow
-- [ ] Add voice AI / multimodal project
+- [x] Add voice AI / multimodal project
 
 ---
 

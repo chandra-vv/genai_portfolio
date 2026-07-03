@@ -1,0 +1,16 @@
+# Secrets — NEVER push
+.env
+*.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Testing
+.pytest_cache/
+.coverage
