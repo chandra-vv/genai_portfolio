@@ -22,7 +22,9 @@
     <img src="https://img.shields.io/badge/LangGraph-Latest-FF6B6B?style=flat-square" />
     <img src="https://img.shields.io/badge/OpenAI-GPT--4o-412991?style=flat-square&logo=openai&logoColor=white" />
     <img src="https://img.shields.io/badge/FAISS-VectorStore-009688?style=flat-square" />
+    <img src="https://img.shields.io/badge/Chroma-VectorStore-FF6600?style=flat-square" />
     <img src="https://img.shields.io/badge/Streamlit-Latest-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" />
+    <img src="https://img.shields.io/badge/Gradio-Latest-F97316?style=flat-square" />
     <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" />
   </p>
 
@@ -49,11 +51,12 @@ A hands-on **Generative AI Engineering portfolio** demonstrating production-grad
 
 | # | Project | Description | Key Tech | Demo |
 |---|---------|-------------|----------|------|
-| 11 | [**Meeting Minutes Voice Assistant**](./11_meeting_minutes_voice_assistant/) | Transcribes a meeting recording with HF Whisper and generates structured minutes — summary, discussion points, action items — with OpenAI | Hugging Face · Whisper · OpenAI · tenacity | [▶ View](./11_meeting_minutes_voice_assistant/) |
+| 12 | ⭐ [**Insurellm Expert Assistant**](./12_insurellm_expert_assistant/) | Production-grade RAG assistant with LLM-based document chunking, dual-query retrieval + reranking, and an automated evaluation dashboard — 4.48/5 answer accuracy across 150 test questions | OpenAI · litellm · Chroma · Gradio · RAG | [▶ View](./12_insurellm_expert_assistant/) |
+| 11 | ⭐ [**Meeting Minutes Voice Assistant**](./11_meeting_minutes_voice_assistant/) | Transcribes a meeting recording with HF Whisper and generates structured minutes — summary, discussion points, action items — with OpenAI | Hugging Face · Whisper · OpenAI · tenacity | [▶ View](./11_meeting_minutes_voice_assistant/) |
 | 10 | [**AI Image Generation**](./10_vacation_image_generator/) | Generates pop-art style vacation images from city/location prompts using OpenAI's `gpt-image-1`, with a Gradio UI for interactive use | OpenAI · gpt-image-1 · Gradio | [▶ View](./10_vacation_image_generator/) |
 | 09 | [**Text-to-SQL Studio**](./09_text_2_sql/) | Natural language to SQL engine — auto-generates, runs & self-fixes SQL queries against a MySQL database using Groq AI | Groq AI · LLaMA 3.3 · MySQL · Streamlit | [▶ View](./09_text_2_sql/) |
 | 08 | [**ATS Resume Scanner**](./08_ats_resume_scanner/) | Multi-agent ATS scoring system with RAG pipeline — scores resumes 0-100 with skill matching, gap analysis & suggestions | LangGraph · RAG · FAISS · OpenAI | [▶ View](./08_ats_resume_scanner/) |
-| 07 | [**Multi-Agent Assistant**](./07_multi_agent_assistant/) | Advanced agentic system with Planner, Retriever, Controller & Memory nodes for complex multi-step reasoning | LangGraph · LangChain · Agents | [▶ View](./07_multi_agent_assistant/) |
+| 07 | ⭐ [**Multi-Agent Assistant**](./07_multi_agent_assistant/) | Advanced agentic system with Planner, Retriever, Controller & Memory nodes for complex multi-step reasoning | LangGraph · LangChain · Agents | [▶ View](./07_multi_agent_assistant/) |
 | 06 | [**AI Portfolio Site**](./06_ai_portfolio_site/) | Interactive Streamlit portfolio site for live AI project demonstrations | Streamlit · OpenAI | [▶ View](./06_ai_portfolio_site/) |
 | 05 | [**RAG Chatbot with Memory**](./05_rag_chatbot_with_memory/) | Context-aware RAG chatbot combining document retrieval with multi-turn conversational memory | LangChain · FAISS · Memory | [▶ View](./05_rag_chatbot_with_memory/) |
 | 04 | [**LangGraph RAG Chatbot**](./04_langgraph_rag_chatbot/) | RAG pipeline modeled as a LangGraph state machine with typed state and controlled transitions | LangGraph · RAG · FAISS | [▶ View](./04_langgraph_rag_chatbot/) |
@@ -65,42 +68,49 @@ A hands-on **Generative AI Engineering portfolio** demonstrating production-grad
 
 ## 🏗️ Architecture
 
-### Flagship Project — ATS Resume Scanner (Project 08)
+### 🥇 Flagship Project — Insurellm Expert Assistant (Project 12)
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
-│                        STREAMLIT UI                              │
-│              Resume Upload  ·  JD Input  ·  Results              │
-└─────────────────────────┬────────────────────────────────────────┘
-                          │
-                          ▼
-┌──────────────────────────────────────────────────────────────────┐
-│                    LANGGRAPH PIPELINE                            │
-│                                                                  │
-│  ┌─────────────────┐                                            │
-│  │  RAG Node        │  JD chunks → OpenAI Embeddings → FAISS    │
-│  │                  │  → retrieves top-k relevant sections       │
-│  └────────┬─────────┘                                           │
-│           ▼                                                      │
-│  ┌─────────────────┐                                            │
-│  │  Scoring Node    │  ATS Score 0–100 · Structured JSON        │
-│  └────────┬─────────┘                                           │
-│           ▼                                                      │
-│  ┌─────────────────┐                                            │
-│  │  Skill Match     │  Matched ✅ vs Missing ❌ Skills           │
-│  └────────┬─────────┘                                           │
-│           ▼                                                      │
-│  ┌─────────────────┐                                            │
-│  │  Gap Analysis    │  Experience & Qualification Gaps           │
-│  └────────┬─────────┘                                           │
-│           ▼                                                      │
-│  ┌─────────────────┐                                            │
-│  │  Suggestions     │  3–5 Actionable Resume Improvements        │
-│  └────────┬─────────┘                                           │
-│           ▼                                                      │
-│       📄 Downloadable Markdown Report                            │
+│                         INGESTION (offline)                      │
+│                                                                    │
+│   knowledge-base/*.md ──▶ LLM Chunking ──▶ text-embedding-3-large │
+│                          (gpt-4.1-mini)         │                 │
+│                                                  ▼                 │
+│                                     Chroma Vector Store            │
 └──────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌──────────────────────────────────────────────────────────────────┐
+│                      ANSWERING (per question)                    │
+│                                                                    │
+│  Question ──▶ Query Rewrite ──▶ Retrieve (original + rewritten)  │
+│                                          │                         │
+│                                          ▼                         │
+│                              Merge + LLM Rerank (top 10)          │
+│                                          │                         │
+│                                          ▼                         │
+│                          Grounded Answer Generation                │
+└──────────────────────────────────────────────────────────────────┘
+                                    │
+                        ┌───────────┴───────────┐
+                        ▼                       ▼
+                 Gradio Chat UI        Evaluation Dashboard
+                                    150 test questions · 7 categories
+                                    MRR · nDCG · accuracy · completeness
 ```
+
+### 🥈 Flagship Project — Multi-Agent Assistant (Project 07)
+
+Planner, Retriever, Controller, and Memory agents coordinated via a LangGraph state machine for
+complex, multi-step reasoning tasks. See [07_multi_agent_assistant](./07_multi_agent_assistant/)
+for details.
+
+### 🥉 Flagship Project — Meeting Minutes Voice Assistant (Project 11)
+
+Transcribes meeting audio with Hugging Face Whisper, then generates structured minutes — summary,
+discussion points, action items — with OpenAI. See
+[11_meeting_minutes_voice_assistant](./11_meeting_minutes_voice_assistant/) for details.
 
 ### Portfolio Architecture — Progressive Complexity
 
@@ -110,17 +120,19 @@ Foundation          Retrieval           Orchestration        Production
 01_llm_basic   →   02_pdf_qa      →    04_langgraph   →    07_multi_agent
                    03_entity_mem  →    05_rag_memory  →    08_ats_scanner
                                        06_portfolio    →    09_text2sql
+                                                       →    12_insurellm_expert_assistant
 ```
 
 ---
 
 ## ✨ Key Features Across Projects
 
-- **RAG Pipelines** — FAISS vector search with OpenAI Embeddings for semantic retrieval
+- **RAG Pipelines** — FAISS/Chroma vector search with OpenAI Embeddings for semantic retrieval
 - **LangGraph State Machines** — typed state, explicit nodes, controlled transitions
 - **Multi-Agent Orchestration** — Planner, Retriever, Controller, Memory agents
 - **Structured LLM Outputs** — JSON-validated responses, no fragile regex parsing
-- **Production UI** — Streamlit apps with file upload, real-time results, downloadable reports
+- **Production UI** — Streamlit/Gradio apps with file upload, real-time results, downloadable reports
+- **Automated Evaluation** — retrieval and answer-quality scoring (MRR, nDCG, LLM-as-a-judge) against curated test sets
 - **LLMOps Practices** — prompt engineering, output validation, error handling, API key security
 
 ---
@@ -132,9 +144,9 @@ Foundation          Retrieval           Orchestration        Production
 | Category | Technologies |
 |----------|-------------|
 | **LLMs** | ![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o%20%7C%20GPT--4o--mini-412991?style=flat-square&logo=openai) |
-| **Orchestration** | ![LangGraph](https://img.shields.io/badge/LangGraph-StateGraph-FF6B6B?style=flat-square) ![LangChain](https://img.shields.io/badge/LangChain-LCEL-1C3C3C?style=flat-square) |
-| **RAG & Vector DB** | ![FAISS](https://img.shields.io/badge/FAISS-VectorStore-009688?style=flat-square) ![Embeddings](https://img.shields.io/badge/OpenAI-Embeddings-412991?style=flat-square) |
-| **UI & Deployment** | ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit) |
+| **Orchestration** | ![LangGraph](https://img.shields.io/badge/LangGraph-StateGraph-FF6B6B?style=flat-square) ![LangChain](https://img.shields.io/badge/LangChain-LCEL-1C3C3C?style=flat-square) ![litellm](https://img.shields.io/badge/litellm-Multi--Provider-6C63FF?style=flat-square) |
+| **RAG & Vector DB** | ![FAISS](https://img.shields.io/badge/FAISS-VectorStore-009688?style=flat-square) ![Chroma](https://img.shields.io/badge/Chroma-VectorStore-FF6600?style=flat-square) ![Embeddings](https://img.shields.io/badge/OpenAI-Embeddings-412991?style=flat-square) |
+| **UI & Deployment** | ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit) ![Gradio](https://img.shields.io/badge/Gradio-Latest-F97316?style=flat-square) |
 | **Language** | ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python) |
 | **File Parsing** | ![pdfplumber](https://img.shields.io/badge/pdfplumber-PDF-red?style=flat-square) ![docx2txt](https://img.shields.io/badge/docx2txt-DOCX-blue?style=flat-square) |
 
@@ -152,7 +164,7 @@ git clone https://github.com/chandra-vv/genai_portfolio.git
 cd genai_portfolio
 
 # 2. Navigate to any project
-cd 08_ats_resume_scanner
+cd 12_insurellm_expert_assistant
 
 # 3. Create and activate virtual environment
 python -m venv venv
@@ -166,8 +178,9 @@ pip install -r requirements.txt
 cp .env.example .env
 # Add your OpenAI API key to .env
 
-# 6. Run
-streamlit run app.py
+# 6. Run (see each project's own README for its exact run command —
+#    e.g. `python app.py` for Gradio projects, `streamlit run app.py` for Streamlit ones)
+python app.py
 ```
 
 > Each project folder contains its own `README.md` with detailed setup instructions and architecture notes.
@@ -190,6 +203,7 @@ streamlit run app.py
 - [ ] Add LLM Fine-tuning project
 - [ ] Add LLMOps monitoring with MLflow
 - [x] Add voice AI / multimodal project
+- [x] Add production RAG system with automated evaluation dashboard (Insurellm Expert Assistant)
 
 ---
 
@@ -203,11 +217,11 @@ genai_portfolio/
 ├── 04_langgraph_rag_chatbot/       # LangGraph RAG pipeline
 ├── 05_rag_chatbot_with_memory/     # RAG + conversational memory
 ├── 06_ai_portfolio_site/           # Streamlit portfolio site
-├── 07_multi_agent_assistant/       # Multi-agent system
+├── 07_multi_agent_assistant/       # Multi-agent system ⭐
 │   ├── app.py
 │   ├── graph/
 │   └── agents/
-├── 08_ats_resume_scanner/          # ATS Resume Scanner ⭐
+├── 08_ats_resume_scanner/          # ATS Resume Scanner
 │   ├── app.py
 │   ├── requirements.txt
 │   ├── README.md
@@ -219,6 +233,22 @@ genai_portfolio/
 │   ├── db.py
 │   ├── llm.py
 │   ├── requirements.txt
+│   └── .env.example
+├── 11_meeting_minutes_voice_assistant/  # Meeting Minutes Voice Assistant ⭐
+│   ├── pipeline.py
+│   ├── requirements.txt
+│   ├── README.md
+│   ├── .env.example
+│   └── tests/
+├── 12_insurellm_expert_assistant/  # Insurellm Expert Assistant ⭐ (flagship)
+│   ├── app.py                        # Gradio chat UI
+│   ├── evaluator.py                  # Gradio evaluation dashboard
+│   ├── implementation/               # ingest.py, answer.py (RAG pipeline)
+│   ├── evaluation/                   # eval.py, test.py, tests.jsonl (150 questions)
+│   ├── knowledge-base/                # source documents
+│   ├── screenshots/
+│   ├── requirements.txt
+│   ├── README.md
 │   └── .env.example
 └── README.md
 ```
