@@ -113,7 +113,7 @@ Stores conversation context across turns
 
 ## 🗂️ Project Structure
 
-07_multi_agent_assistant/  
+06_multi_agent_assistant/  
 ├── agents/  
 │   ├── planner_agent.py        ## Generates sub-questions for complex queries  
 │   └── retriever_agent.py      ## Retrieves answers using embeddings and FAISS  
@@ -151,7 +151,7 @@ How do embeddings improve Retrieval-Augmented Generation (RAG)?
 
 ```bash
 git clone https://github.com/chandra-vv/genai_portfolio.git  
-cd genai_portfolio/07_multi_agent_assistant  
+cd genai_portfolio/06_multi_agent_assistant  
 ```
 ### 2️⃣ Create and Activate Virtual Environment
 

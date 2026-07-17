@@ -44,6 +44,7 @@
 
 A hands-on **Generative AI Engineering portfolio** demonstrating production-grade AI system design — from foundational LLM interactions to enterprise-scale multi-agent pipelines. Each project is built to solve a real-world AI engineering challenge.
 
+Projects are numbered in order of increasing complexity, from single-purpose LLM apps through retrieval and orchestration to production-grade, evaluated systems.
 
 ---
 
@@ -51,24 +52,21 @@ A hands-on **Generative AI Engineering portfolio** demonstrating production-grad
 
 | # | Project | Description | Key Tech | Demo |
 |---|---------|-------------|----------|------|
-| 12 | ⭐ [**Insurellm Expert Assistant**](./12_insurellm_expert_assistant/) | Production-grade RAG assistant with LLM-based document chunking, dual-query retrieval + reranking, and an automated evaluation dashboard — 4.48/5 answer accuracy across 150 test questions | OpenAI · litellm · Chroma · Gradio · RAG | [▶ View](./12_insurellm_expert_assistant/) |
-| 11 | ⭐ [**Meeting Minutes Voice Assistant**](./11_meeting_minutes_voice_assistant/) | Transcribes a meeting recording with HF Whisper and generates structured minutes — summary, discussion points, action items — with OpenAI | Hugging Face · Whisper · OpenAI · tenacity | [▶ View](./11_meeting_minutes_voice_assistant/) |
-| 10 | [**AI Image Generation**](./10_vacation_image_generator/) | Generates pop-art style vacation images from city/location prompts using OpenAI's `gpt-image-1`, with a Gradio UI for interactive use | OpenAI · gpt-image-1 · Gradio | [▶ View](./10_vacation_image_generator/) |
-| 09 | [**Text-to-SQL Studio**](./09_text_2_sql/) | Natural language to SQL engine — auto-generates, runs & self-fixes SQL queries against a MySQL database using Groq AI | Groq AI · LLaMA 3.3 · MySQL · Streamlit | [▶ View](./09_text_2_sql/) |
-| 08 | [**ATS Resume Scanner**](./08_ats_resume_scanner/) | Multi-agent ATS scoring system with RAG pipeline — scores resumes 0-100 with skill matching, gap analysis & suggestions | LangGraph · RAG · FAISS · OpenAI | [▶ View](./08_ats_resume_scanner/) |
-| 07 | ⭐ [**Multi-Agent Assistant**](./07_multi_agent_assistant/) | Advanced agentic system with Planner, Retriever, Controller & Memory nodes for complex multi-step reasoning | LangGraph · LangChain · Agents | [▶ View](./07_multi_agent_assistant/) |
-| 06 | [**AI Portfolio Site**](./06_ai_portfolio_site/) | Interactive Streamlit portfolio site for live AI project demonstrations | Streamlit · OpenAI | [▶ View](./06_ai_portfolio_site/) |
-| 05 | [**RAG Chatbot with Memory**](./05_rag_chatbot_with_memory/) | Context-aware RAG chatbot combining document retrieval with multi-turn conversational memory | LangChain · FAISS · Memory | [▶ View](./05_rag_chatbot_with_memory/) |
+| 01 | [**Entity Memory Chatbot**](./01_entity_memory_chatbot/) | Conversational assistant that recalls names, organizations & facts across turns | LangChain · Entity Memory | [▶ View](./01_entity_memory_chatbot/) |
+| 02 | [**AI Image Generation**](./02_vacation_image_generator/) | Generates pop-art style vacation images from city/location prompts using OpenAI's `gpt-image-1`, with a Gradio UI for interactive use | OpenAI · gpt-image-1 · Gradio | [▶ View](./02_vacation_image_generator/) |
+| 03 | [**RAG Chatbot with Memory**](./03_rag_chatbot_with_memory/) | Context-aware RAG chatbot combining document retrieval with multi-turn conversational memory | LangChain · FAISS · Memory | [▶ View](./03_rag_chatbot_with_memory/) |
 | 04 | [**LangGraph RAG Chatbot**](./04_langgraph_rag_chatbot/) | RAG pipeline modeled as a LangGraph state machine with typed state and controlled transitions | LangGraph · RAG · FAISS | [▶ View](./04_langgraph_rag_chatbot/) |
-| 03 | [**Entity Memory Chatbot**](./03_entity_memory_chatbot/) | Conversational assistant that recalls names, organizations & facts across turns | LangChain · Entity Memory | [▶ View](./03_entity_memory_chatbot/) |
-| 02 | [**PDF Q&A Chatbot**](./02_pdf_qa_chatbot/) | Document intelligence system for accurate PDF Q&A using embeddings and vector retrieval | LangChain · FAISS · Embeddings | [▶ View](./02_pdf_qa_chatbot/) |
-| 01 | [**LLM Basics**](./01_llm_basic/) | Foundational prompt engineering, completions, and structured Q&A workflows | OpenAI API · Prompt Engineering | [▶ View](./01_llm_basic/) |
+| 05 | [**Text-to-SQL Studio**](./05_text_2_sql/) | Natural language to SQL engine — auto-generates, runs & self-fixes SQL queries against a MySQL database using Groq AI | Groq AI · LLaMA 3.3 · MySQL · Streamlit | [▶ View](./05_text_2_sql/) |
+| 06 | ⭐ [**Multi-Agent Assistant**](./06_multi_agent_assistant/) | Advanced agentic system with Planner, Retriever, Controller & Memory nodes for complex multi-step reasoning | LangGraph · LangChain · Agents | [▶ View](./06_multi_agent_assistant/) |
+| 07 | [**ATS Resume Scanner**](./07_ats_resume_scanner/) | Multi-agent ATS scoring system with RAG pipeline — scores resumes 0-100 with skill matching, gap analysis & suggestions | LangGraph · RAG · FAISS · OpenAI | [▶ View](./07_ats_resume_scanner/) |
+| 08 | ⭐ [**Meeting Minutes Voice Assistant**](./08_meeting_minutes_voice_assistant/) | Transcribes a meeting recording with HF Whisper and generates structured minutes — summary, discussion points, action items — with OpenAI | Hugging Face · Whisper · OpenAI · tenacity | [▶ View](./08_meeting_minutes_voice_assistant/) |
+| 09 | ⭐ [**Insurellm Expert Assistant**](./09_insurellm_expert_assistant/) | Production-grade RAG assistant with LLM-based document chunking, dual-query retrieval + reranking, and an automated evaluation dashboard — 4.48/5 answer accuracy across 150 test questions | OpenAI · litellm · Chroma · Gradio · RAG | [▶ View](./09_insurellm_expert_assistant/) |
 
 ---
 
 ## 🏗️ Architecture
 
-### 🥇 Flagship Project — Insurellm Expert Assistant (Project 12)
+### 🥇 Flagship Project — Insurellm Expert Assistant (Project 09)
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
@@ -100,27 +98,27 @@ A hands-on **Generative AI Engineering portfolio** demonstrating production-grad
                                     MRR · nDCG · accuracy · completeness
 ```
 
-### 🥈 Flagship Project — Multi-Agent Assistant (Project 07)
+### 🥈 Flagship Project — Multi-Agent Assistant (Project 06)
 
 Planner, Retriever, Controller, and Memory agents coordinated via a LangGraph state machine for
-complex, multi-step reasoning tasks. See [07_multi_agent_assistant](./07_multi_agent_assistant/)
+complex, multi-step reasoning tasks. See [06_multi_agent_assistant](./06_multi_agent_assistant/)
 for details.
 
-### 🥉 Flagship Project — Meeting Minutes Voice Assistant (Project 11)
+### 🥉 Flagship Project — Meeting Minutes Voice Assistant (Project 08)
 
 Transcribes meeting audio with Hugging Face Whisper, then generates structured minutes — summary,
 discussion points, action items — with OpenAI. See
-[11_meeting_minutes_voice_assistant](./11_meeting_minutes_voice_assistant/) for details.
+[08_meeting_minutes_voice_assistant](./08_meeting_minutes_voice_assistant/) for details.
 
 ### Portfolio Architecture — Progressive Complexity
 
 ```
-Foundation          Retrieval           Orchestration        Production
-─────────           ─────────           ─────────────        ──────────
-01_llm_basic   →   02_pdf_qa      →    04_langgraph   →    07_multi_agent
-                   03_entity_mem  →    05_rag_memory  →    08_ats_scanner
-                                       06_portfolio    →    09_text2sql
-                                                       →    12_insurellm_expert_assistant
+Foundation              Retrieval          Orchestration         Production
+───────────             ─────────          ─────────────         ──────────
+01_entity_memory   →                                         →   06_multi_agent
+02_vacation_image       03_rag_memory  →   04_langgraph      →   07_ats_scanner
+                                            05_text2sql       →   08_meeting_minutes
+                                                               →   09_insurellm_expert_assistant
 ```
 
 ---
@@ -164,7 +162,7 @@ git clone https://github.com/chandra-vv/genai_portfolio.git
 cd genai_portfolio
 
 # 2. Navigate to any project
-cd 12_insurellm_expert_assistant
+cd 09_insurellm_expert_assistant
 
 # 3. Create and activate virtual environment
 python -m venv venv
@@ -189,21 +187,18 @@ python app.py
 
 ## 🗺️ Roadmap
 
-- [x] LLM Basics & Prompt Engineering
-- [x] PDF Q&A with RAG
 - [x] Entity Memory Chatbot
-- [x] LangGraph RAG Pipeline
+- [x] AI Image Generation
 - [x] RAG with Conversational Memory
-- [x] AI Portfolio Site
+- [x] LangGraph RAG Pipeline
+- [x] Text-to-SQL Studio
 - [x] Multi-Agent Assistant
 - [x] ATS Resume Scanner
-- [x] Text-to-SQL Studio
-- [x] AI Image Generation
+- [x] Add voice AI / multimodal project
+- [x] Add production RAG system with automated evaluation dashboard (Insurellm Expert Assistant)
 - [ ] Deploy projects to Streamlit Cloud with live demo links
 - [ ] Add LLM Fine-tuning project
 - [ ] Add LLMOps monitoring with MLflow
-- [x] Add voice AI / multimodal project
-- [x] Add production RAG system with automated evaluation dashboard (Insurellm Expert Assistant)
 
 ---
 
@@ -211,36 +206,34 @@ python app.py
 
 ```
 genai_portfolio/
-├── 01_llm_basic/                   # LLM fundamentals
-├── 02_pdf_qa_chatbot/              # PDF Q&A with RAG
-├── 03_entity_memory_chatbot/       # Entity memory conversations
+├── 01_entity_memory_chatbot/       # Entity memory conversations
+├── 02_vacation_image_generator/    # AI image generation
+├── 03_rag_chatbot_with_memory/     # RAG + conversational memory
 ├── 04_langgraph_rag_chatbot/       # LangGraph RAG pipeline
-├── 05_rag_chatbot_with_memory/     # RAG + conversational memory
-├── 06_ai_portfolio_site/           # Streamlit portfolio site
-├── 07_multi_agent_assistant/       # Multi-agent system ⭐
+├── 05_text_2_sql/                  # Text-to-SQL Studio
+│   ├── app.py
+│   ├── db.py
+│   ├── llm.py
+│   ├── requirements.txt
+│   └── .env.example
+├── 06_multi_agent_assistant/       # Multi-agent system ⭐
 │   ├── app.py
 │   ├── graph/
 │   └── agents/
-├── 08_ats_resume_scanner/          # ATS Resume Scanner
+├── 07_ats_resume_scanner/          # ATS Resume Scanner
 │   ├── app.py
 │   ├── requirements.txt
 │   ├── README.md
 │   ├── .env.example
 │   ├── .streamlit/
 │   └── screenshots/
-├── 09_text_2_sql/                  # Text-to-SQL Studio
-│   ├── app.py
-│   ├── db.py
-│   ├── llm.py
-│   ├── requirements.txt
-│   └── .env.example
-├── 11_meeting_minutes_voice_assistant/  # Meeting Minutes Voice Assistant ⭐
+├── 08_meeting_minutes_voice_assistant/  # Meeting Minutes Voice Assistant ⭐
 │   ├── pipeline.py
 │   ├── requirements.txt
 │   ├── README.md
 │   ├── .env.example
 │   └── tests/
-├── 12_insurellm_expert_assistant/  # Insurellm Expert Assistant ⭐ (flagship)
+├── 09_insurellm_expert_assistant/  # Insurellm Expert Assistant ⭐ (flagship)
 │   ├── app.py                        # Gradio chat UI
 │   ├── evaluator.py                  # Gradio evaluation dashboard
 │   ├── implementation/               # ingest.py, answer.py (RAG pipeline)

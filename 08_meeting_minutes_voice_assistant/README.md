@@ -29,7 +29,7 @@ A **notebook-based pipeline** that turns a recorded meeting into structured minu
 ## 📁 Project Structure
 
 ```
-11_meeting_minutes_voice_assistant/
+08_meeting_minutes_voice_assistant/
 ├── meeting_minutes_voice_agent.ipynb   # Notebook driver — loads env, calls pipeline, displays minutes
 ├── pipeline.py                         # Reusable transcribe_audio() / generate_minutes() functions
 ├── denver_extract.mp3                  # Sample meeting recording
@@ -49,7 +49,7 @@ A **notebook-based pipeline** that turns a recorded meeting into structured minu
 
 ```bash
 git clone https://github.com/chandra-vv/genai_portfolio.git
-cd genai_portfolio/11_meeting_minutes_voice_assistant
+cd genai_portfolio/08_meeting_minutes_voice_assistant
 ```
 
 ### 2. Create a virtual environment (recommended)

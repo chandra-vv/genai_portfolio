@@ -58,7 +58,7 @@ Displayed with Current Entity Memory
 
 ## 🗂️ Project Structure
 
-03_entity_memory_chatbot/  
+01_entity_memory_chatbot/  
 ├── app.py            – Streamlit chatbot application  
 ├── requirements.txt  – Python dependencies  
 ├── .env              – Environment variables (API key)  
